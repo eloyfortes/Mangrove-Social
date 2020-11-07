@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StyleSheet, TextInput, Text, View, Button} from 'react-native';
+import {StyleSheet, TextInput, View, Button} from 'react-native';
 
 import { Input } from 'react-native-elements';
 
