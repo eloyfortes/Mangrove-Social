@@ -1,8 +1,10 @@
 import {useEffect, useState} from 'react';
 import * as React from 'react';
-import {StyleSheet, View, Image} from 'react-native';
+import {StyleSheet, View, Image, Text} from 'react-native';
 import LoginStepper from '../../components/login/stepper';
 import logo from '../../../logo.png'
+
+import LinearGradient from 'react-native-linear-gradient';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -23,28 +25,31 @@ const Login = () => {
   // }, [email]);
 
   return (
-    <View style={style.container}>
-      <Image style={style.logo} source={logo}/>
-      <View  style={style.content}> 
-        {step === 0 && (
-          <LoginStepper
-            placeholder={email}
-            onChange={handleChange}
-            onClick={handleClick}
-            buttonLabel={'rola'}
-          />
-        )}
-        {step === 1 && (
-          <LoginStepper
-            placeholder={email}
-            onChange={handleChange}
-            onClick={handleClick}
-            buttonLabel={'rola 1'}
-          />
-        )}
+    <LinearGradient colors={['#2e2ec1', '#00d4ff', '#192f6a']} style={style.linearGradient}>
+      <View style={style.container}>
+        <Image style={style.logo} source={logo}/>
+        <View  style={style.content}> 
+          {step === 0 && (
+            <LoginStepper
+              placeholder={email}
+              onChange={handleChange}
+              onClick={handleClick}
+              buttonLabel={'rola'}
+            />
+          )}
+          {step === 1 && (
+            <LoginStepper
+              placeholder={email}
+              onChange={handleChange}
+              onClick={handleClick}
+              buttonLabel={'rola 1'}
+            />
+          )}
+
+
+        </View>
       </View>
-     
-    </View>
+    </LinearGradient>
   );
 };
 
@@ -73,5 +78,19 @@ const style = StyleSheet.create({
   button: {
     marginTop: 10,
 
-  }
+  },
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5
+  },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
+  },
 });

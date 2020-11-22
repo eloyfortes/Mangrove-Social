@@ -1,6 +1,10 @@
 import * as React from 'react';
 import {StyleSheet, TextInput, View, Button} from 'react-native';
-import {Input} from 'react-native-elements';
+
+// import Icon from 'react-native-vector-icons/FontAwesome';
+import { Input } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 
 interface ILoginStepperProps {
   placeholder: string;
@@ -21,12 +25,18 @@ const LoginStepper: React.FC<ILoginStepperProps> = ({
 
   return (
     <>
+    <Icon name="ios-person" size={30} color="#4F8EF7" />
+    <View>
+      {/* <Input
+        placeholder='INPUT WITH ICON'
+        leftIcon={{ type: 'font-awesome', name: 'inbox' }}
+      /> */}
+    </View>
       <TextInput
         style={style.input}
         onChangeText={handleChange}
         value={placeholder}
       />
-      <Input placeholder="INPUT WITH CUSTOM ICON" />
       <View style={style.button}>
         <Button title={buttonLabel} onPress={onClick} />
       </View>
